@@ -1,8 +1,8 @@
 <template>
   <div class="post">
     <div>
-      <div><strong>Марка: </strong> {{post.model}}</div>
-      <div><strong>Модель: </strong> {{post.body}}</div>
+      <div><strong>Марка: </strong> {{post.id}}</div>
+      <div><strong>Модель: </strong> {{post.model}}</div>
     </div>
     <div class="post__buttons">
       <MyButton
