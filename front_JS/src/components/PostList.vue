@@ -1,23 +1,18 @@
 <template>
-  <div v-if="posts.length > 0">
-    <h4>Список крайних продаж</h4>
-    <post-item
-        v-for="post in posts"
-        :post="post"
-        :key="post.id"
+  <div class="post" v-for="post in posts">
 
-        @remove="$emit('remove',post)"
-    />
+    <div><strong>Товар: </strong> {{post.product}}</div>
+    <div><strong>Имя поставщика: </strong> {{post.nameSupplier}}</div>
+    <div><strong>Дата продажи: </strong> {{post.dateSales}}</div>
+    <div><strong>Имя продавца: </strong> {{post.nameSeller}}</div>
+    <div><strong>Имя покупателя: </strong> {{post.nameCustomer}}</div>
+    <div><strong>Тип оплаты: </strong> {{post.payid}}</div>
+    <div><strong>Товар: </strong> {{post.product}}</div>
   </div>
-  <h2 v-else style="color: firebrick">
-    Список продаж пуст!
-  </h2>
 </template>
 
 <script>
-import PostItem from "@/components/PostItem";
 export default {
-  components: {PostItem},
   props: {
     posts: {
       type: Array,
@@ -28,5 +23,9 @@ export default {
 </script>
 
 <style scoped>
-
+.post {
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+}
 </style>

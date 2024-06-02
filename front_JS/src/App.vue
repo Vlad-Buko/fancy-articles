@@ -1,8 +1,7 @@
 <template>
-  <div  class="application">
+  <div class="app">
     <router-view></router-view>
-    <router-link to="/posts">О магазине</router-link>
-    <router-link to="/about">О приложении</router-link>
+
   </div>
 </template>
 

@@ -1,10 +1,10 @@
 package bsuir.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,14 +12,15 @@ import java.util.List;
  */
 
 @Entity
-@Data
+@Getter
+@Setter
 public class ProductCategories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique=true)
-    private Long id;
+    @Column(name = "id")
+    private Integer id;
     private String nameProduct;
 
-    @OneToMany(mappedBy = "productCategories")
+    @OneToMany(mappedBy = "productCategories", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<Product> productList;
 }
