@@ -10,6 +10,7 @@ import bsuir.service.ProductService;
 import bsuir.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,13 +31,15 @@ public class AppController {
 
     private final SaleService saleService;
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "Hello!";
-    }
+
 
     @GetMapping("/sale")
     public List<SaleDto> listSale() {
         return saleService.getSale();
+    }
+
+    @PostMapping("")
+    public void addSale() {
+
     }
 }

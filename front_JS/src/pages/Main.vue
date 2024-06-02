@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Галантерея Минска приветсвует!</h1>
-  </div>
-  <button type="button" onclick="location.href='http://localhost:8080/posts'">Продавцы</button>
+    <h1>Галантерейный магазин</h1> </div>
+  <router-link to="/sales">Продажи</router-link>
 </template>
 
 <script>
 export default {
+  name: "Main"
 }
 </script>
 

@@ -23,6 +23,7 @@ public class SaleDto {
     private String product;
     private String nameCustomer;
     private String note;
+
     private String paymentType;
 
 }

@@ -1,10 +1,11 @@
 package bsuir.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
+import org.springframework.validation.annotation.Validated;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,16 +14,18 @@ import java.util.List;
 
 @Entity
 @Data
+@Validated
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique=true)
-    private Long id;
+    @Column(name = "id")
+    private Integer id;
+    @Size(min = 3)
     private String nameCompany;
     private String legalAddress;
     private String email;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "supp")
+    @OneToMany(mappedBy = "supp", cascade = CascadeType.ALL)
     private List<Sale> saleList;
 }
